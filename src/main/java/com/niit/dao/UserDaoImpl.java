@@ -38,6 +38,7 @@ private SessionFactory sessionFactory;
 		Query query=session.createQuery("from User where email=:email and password=:password");
 		query.setString("email", user.getEmail());
 		query.setString("password", user.getPassword());
+		System.out.println("email "+user.getEmail()+user.getPassword());
 		User validUser=(User)query.uniqueResult(); //validUser is the result of the query
 		return validUser; //validUser is either null or 1 object
 	}

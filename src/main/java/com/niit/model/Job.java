@@ -1,91 +1,86 @@
 package com.niit.model;
 
 import java.util.Date;
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 @Entity
 @Table(name="job_s180396")
 public class Job {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 private int id;
-private String JobTitle;
-private String JobDescription;
-private String SkillsRequired;
-private String Location;
-private String Salary;
-private String CompanyName;
-private String DatePostedOn;
-private String YrsOfExp;
-private boolean active;
+private String jobTitle;
+private String jobDescription;
+private String skillsRequired;
+private String location;
+private String salary;
+private String companyName;
+private Date postedOn;
+private String yrsOfExp;
+private boolean active;//admin updates the field active false/true
 public int getId() {
 	return id;
 }
+public void setId(int id) {
+	this.id = id;
+}
 public String getJobTitle() {
-	return JobTitle;
+	return jobTitle;
 }
 public void setJobTitle(String jobTitle) {
-	JobTitle = jobTitle;
+	this.jobTitle = jobTitle;
 }
 public String getJobDescription() {
-	return JobDescription;
+	return jobDescription;
 }
 public void setJobDescription(String jobDescription) {
-	JobDescription = jobDescription;
+	this.jobDescription = jobDescription;
 }
 public String getSkillsRequired() {
-	return SkillsRequired;
+	return skillsRequired;
 }
 public void setSkillsRequired(String skillsRequired) {
-	SkillsRequired = skillsRequired;
+	this.skillsRequired = skillsRequired;
 }
 public String getLocation() {
-	return Location;
+	return location;
 }
 public void setLocation(String location) {
-	Location = location;
+	this.location = location;
 }
 public String getSalary() {
-	return Salary;
+	return salary;
 }
 public void setSalary(String salary) {
-	Salary = salary;
+	this.salary = salary;
 }
 public String getCompanyName() {
-	return CompanyName;
+	return companyName;
 }
 public void setCompanyName(String companyName) {
-	CompanyName = companyName;
+	this.companyName = companyName;
 }
-public String getDatePostedOn() {
-	return DatePostedOn;
+public Date getPostedOn() {
+	return postedOn;
 }
-public void setDatePostedOn(String datePostedOn) {
-	DatePostedOn = datePostedOn;
+public void setPostedOn(Date postedOn) {
+	this.postedOn = postedOn;
 }
 public String getYrsOfExp() {
-	return YrsOfExp;
+	return yrsOfExp;
 }
 public void setYrsOfExp(String yrsOfExp) {
-	YrsOfExp = yrsOfExp;
+	this.yrsOfExp = yrsOfExp;
 }
 public boolean isActive() {
 	return active;
 }
 public void setActive(boolean active) {
 	this.active = active;
-}
-public void setId(int id) {
-	this.id = id;
-}
-public static void setPostedON(Date date) {
-	// TODO Auto-generated method stub
-	
 }
 
 }
