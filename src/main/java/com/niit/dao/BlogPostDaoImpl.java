@@ -21,8 +21,8 @@ public class BlogPostDaoImpl implements BlogPostDao {
 		Session session=sessionFactory.getCurrentSession();
 		session.save(blogPost);
 
-	}
-	public List<BlogPost> approvedblogs() {
+	}	
+	public List<BlogPost>approvedblogs() {
 		Session session=sessionFactory.getCurrentSession();
 		Query query=session.createQuery("from BlogPost where approved=true");
 		return query.list(); 
@@ -33,5 +33,6 @@ public class BlogPostDaoImpl implements BlogPostDao {
 		Query query=session.createQuery("from BlogPost where approved=false");
 		return query.list(); 
 	}
+	
 
 }
