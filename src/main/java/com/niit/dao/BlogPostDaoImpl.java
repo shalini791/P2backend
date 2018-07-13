@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.model.BlogPost;
-
 @Repository
 @Transactional
 public class BlogPostDaoImpl implements BlogPostDao {

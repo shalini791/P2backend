@@ -2,6 +2,7 @@ package com.niit.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +15,9 @@ public class Job {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 private int id;
 private String jobTitle;
+@Column(nullable=false)
 private String jobDescription;
+@Column(nullable=false)
 private String skillsRequired;
 private String location;
 private String salary;

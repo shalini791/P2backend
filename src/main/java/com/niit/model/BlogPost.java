@@ -62,10 +62,13 @@ public class BlogPost {
 		this.approved = approved;
 	}
 	public int getLikes() {
-		return likes;
-	}
+		return likes;	}
 	public void setLikes(int likes) {
 		this.likes = likes;
 	}
 
 }
+
+
+
+

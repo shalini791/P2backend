@@ -11,3 +11,4 @@ public interface BlogPostDao {
 	  List<BlogPost> blogsWaitingforApproval();
 
 }
+
