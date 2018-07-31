@@ -49,6 +49,12 @@ SessionFactory sf;
 		ssn.update(blogpost);
 		
 	}
+	
+	public void DeleteBlogPost(Blogs blogpost) {
+		Session ssn=sf.getCurrentSession();
+		ssn.delete(blogpost);
+		
+	}
 
 	public Blogs GetBlog(int id) {
 		Session ssn=sf.getCurrentSession();

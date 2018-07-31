@@ -42,6 +42,12 @@ public class BlogCommentsDaoImpl implements BlogCommentsDao{
 		List<BlogComments> AllBlogComments=query.list();
 		return AllBlogComments;
 	}
+
+	public void DeleteBlogComments(BlogComments blogComments) {
+		Session ssn=sf.getCurrentSession();
+		ssn.delete(blogComments);
+		
+	}
 	
 	
 

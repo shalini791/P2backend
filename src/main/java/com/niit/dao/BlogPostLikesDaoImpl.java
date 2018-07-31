@@ -54,4 +54,19 @@ private SessionFactory sf;
 		return AllLikedBlogs;
 	}
 
+	public List<BlogPostLikes> GetAllLikes(int blogid) {
+		Session ssn=sf.getCurrentSession();
+		Query query=ssn.createQuery("from BlogPostLikes where Blogid=?");
+		query.setInteger(1,blogid);
+		List<BlogPostLikes> AllLiked=query.list();
+		return AllLiked;
+	}
+
+	public void DeleteBlogLikes(int blogid) {
+		Session ssn=sf.getCurrentSession();
+		Query query=ssn.createQuery("delete BlogPostLikes where Blogid=?");
+		query.setInteger(0, blogid);
+		query.executeUpdate();
+	}
+
 }

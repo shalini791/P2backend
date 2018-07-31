@@ -10,6 +10,7 @@ public interface FriendDao {
  void addFriend(Friend friend);
  List<Friend>PendingRequest(String email);
 void updateStatus(Friend friendRequest);
-List<Friend> getAllFriends(String email);
- 
+void unFriend(Friend friend);
+/*List<Friend> getAllFriends(String email);*/
+public List<Friend> MyFriend(String email);
 }

@@ -39,16 +39,32 @@ public class FriendDaoImpl implements FriendDao {
 		List<Friend>PendingRequest=query.list();
 		return PendingRequest;
 	}
+	
+	public List<Friend> MyFriend(String email) {
+		Session session=sessionFactory.getCurrentSession();
+		Query query1=session.createQuery("from Friend where toId.email=? and status=?");
+    	query1.setString(0, email);
+		query1.setCharacter(1,'A');
+		List<Friend>MyFriends1=query1.list();
+		
+		Query query2=session.createQuery("from Friend where fromId.email=? and status=?");
+    	query2.setString(0, email);
+		query2.setCharacter(1,'A');
+		List<Friend>MyFriends=query2.list();
+		MyFriends.addAll(MyFriends1);
+		return MyFriends;
+	}
 
 	public void updateStatus(Friend friendRequest) {
 		Session session=sessionFactory.getCurrentSession();
 		if(friendRequest.getStatus()=='A')
 			session.update(friendRequest);
 		if(friendRequest.getStatus()=='D')
-		session.delete(friendRequest);	
+		session.delete(friendRequest);
+		
 	}
 
-	public List<Friend> getAllFriends(String email) {
+	/*public List<Friend> getAllFriends(String email) {
 		Session session=sessionFactory.getCurrentSession();
 		Query query1=session.createQuery("select f.toId from Friend f where f.fromId.email=? and f.status=?");
     	query1.setString(0, email);
@@ -63,5 +79,15 @@ public class FriendDaoImpl implements FriendDao {
     	friendList2.addAll(friendList1);
 
 return friendList2;
+	}*/
+	
+	
+	public void unFriend(Friend friend) {
+		System.out.println(friend.getStatus()+"**************************************************************");
+		Session session=sessionFactory.getCurrentSession();	
+	      session.update(friend);
+	     
 	}
+	
+	
 }

@@ -11,6 +11,6 @@ public interface BlogDao {
 	public List<Blogs>GetBlogsWaitingApproval();
 	public void UpdateBlogPost(Blogs blogpost);
 	public Blogs GetBlog(int id);
-	
+	public void DeleteBlogPost(Blogs blogpost);
 
 }

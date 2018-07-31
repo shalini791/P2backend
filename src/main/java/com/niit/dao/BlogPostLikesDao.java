@@ -10,5 +10,6 @@ public interface BlogPostLikesDao {
 	public BlogPostLikes HasUserLikedBlogPost(int blogid,String email); 
 	public void RemoveBlogPostLike(int blogid,String email);
 	public List<BlogPostLikes> GetAllLikedBlogs(String email);
-	
+	public List<BlogPostLikes> GetAllLikes(int blogid);
+	public void DeleteBlogLikes(int blogid);
 }
